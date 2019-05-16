@@ -14,9 +14,10 @@ driver.get(url)
 driver.implicitly_wait(30)
 # save the source
 html_page = driver.page_source
-
+# save the page source to file
 with open("source.html", "w") as file:
     file.write(html_page)
+# close the webdriver
 driver.quit()
 
 sounds = bs4.BeautifulSoup(html_page, "lxml")
