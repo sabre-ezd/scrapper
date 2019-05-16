@@ -20,11 +20,14 @@ with open("source.html", "w") as file:
 # close the webdriver
 driver.quit()
 
+# load html as BS object
 sounds = bs4.BeautifulSoup(html_page, "lxml")
+# look for all audio tags in the html code and iterate over them
 for link in sounds.find_all('audio'):
     print("downloading " + link['id'])
-
+    # compose a pathname and filename made of html id tag for every file
     filename = 'soundboard/' + link['id'] + '.mp3'
+    # skip over file if it already exists, else download
     if not os.path.isfile(filename):
         wget.download(link['src'], filename)
         # print(link)
