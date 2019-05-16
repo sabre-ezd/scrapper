@@ -2,7 +2,7 @@
 # from selenium import webdriver
 import bs4
 import os
-
+import requests
 # launch url
 url = 'http://chatbot.admiralbulldog.live/playsound'
 os.makedirs("soundboard", exist_ok=True)
