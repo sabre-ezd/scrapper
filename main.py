@@ -4,7 +4,7 @@ import bs4
 import os
 import wget
 # launch url
-url = 'http://chatbot.admiralbulldog.live/playsound'
+url = input("URL: >>>")
 os.makedirs("soundboard", exist_ok=True)
 
 # create a browser session with webdriver
